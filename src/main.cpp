@@ -60,14 +60,72 @@ const int QUARTER_NOTE = BEAT_DURATION_MS;
 const int EIGHTH_NOTE = BEAT_DURATION_MS / 2;
 const int SIXTEENTH_NOTE = BEAT_DURATION_MS / 4;
 
-void playNotes(const int notes[][2], int numNotes)
+struct NotePlayer
 {
+  int notes[10][2]; // Local buffer for notes (supports up to 10 notes)
+  int numNotes;
+  int currentNote;
+  unsigned long noteStartTime;
+  bool isPlaying;
+
+  void start(const int (*notesArray)[2], int totalNotes)
+  {
+    numNotes = totalNotes;
+    for (int i = 0; i < numNotes; i++)
+    {
+      notes[i][0] = notesArray[i][0];
+      notes[i][1] = notesArray[i][1];
+    }
+    currentNote = 0;
+    noteStartTime = millis();
+    isPlaying = true;
+    tone(BUZZER_PIN, notes[currentNote][0]);
+  }
+
+  void update()
+  {
+    if (!isPlaying)
+      return;
+
+    unsigned long currentTime = millis();
+
+    if (currentTime - noteStartTime >= (unsigned long)notes[currentNote][1])
+    {
+      noTone(BUZZER_PIN);
+      currentNote++;
+      if (currentNote < numNotes)
+      {
+        noteStartTime = currentTime;
+        tone(BUZZER_PIN, notes[currentNote][0]);
+      }
+      else
+      {
+        isPlaying = false;
+      }
+    }
+  }
+};
+
+NotePlayer notePlayer;
+
+void playNotesNonBlocking(const int notes[][2], int numNotes)
+{
+  if (notePlayer.isPlaying)
+    return;
+
+  // Debugging: Print the notes array and durations
+  Serial.println("Starting non-blocking playback:");
   for (int i = 0; i < numNotes; i++)
   {
-    tone(BUZZER_PIN, notes[i][0]);
-    delay(notes[i][1]);
-    noTone(BUZZER_PIN);
+    Serial.print("Note ");
+    Serial.print(i);
+    Serial.print(": Frequency = ");
+    Serial.print(notes[i][0]);
+    Serial.print(", Duration = ");
+    Serial.println(notes[i][1]);
   }
+
+  notePlayer.start(notes, numNotes);
 }
 
 void playCoin()
@@ -75,7 +133,7 @@ void playCoin()
   const int coinTones[][2] = {
       {NOTE_E5, SIXTEENTH_NOTE},
       {NOTE_G5, SIXTEENTH_NOTE}};
-  playNotes(coinTones, sizeof(coinTones) / sizeof(coinTones[0]));
+  playNotesNonBlocking(coinTones, sizeof(coinTones) / sizeof(coinTones[0]));
 }
 
 void playPowerUp()
@@ -85,7 +143,7 @@ void playPowerUp()
       {NOTE_E4, EIGHTH_NOTE},
       {NOTE_G4, EIGHTH_NOTE},
       {NOTE_C5, EIGHTH_NOTE}};
-  playNotes(powerUpTones, sizeof(powerUpTones) / sizeof(powerUpTones[0]));
+  playNotesNonBlocking(powerUpTones, sizeof(powerUpTones) / sizeof(powerUpTones[0]));
 }
 
 void play1Up()
@@ -95,7 +153,7 @@ void play1Up()
       {NOTE_E5, EIGHTH_NOTE},
       {NOTE_G5, EIGHTH_NOTE},
       {NOTE_C6, EIGHTH_NOTE}};
-  playNotes(oneUpTones, sizeof(oneUpTones) / sizeof(oneUpTones[0]));
+  playNotesNonBlocking(oneUpTones, sizeof(oneUpTones) / sizeof(oneUpTones[0]));
 }
 
 void playGameOver()
@@ -105,7 +163,7 @@ void playGameOver()
       {NOTE_G4, QUARTER_NOTE},
       {NOTE_E4, QUARTER_NOTE},
       {NOTE_C4, HALF_NOTE}};
-  playNotes(gameOverTones, sizeof(gameOverTones) / sizeof(gameOverTones[0]));
+  playNotesNonBlocking(gameOverTones, sizeof(gameOverTones) / sizeof(gameOverTones[0]));
 }
 
 void playFlagpole()
@@ -116,24 +174,26 @@ void playFlagpole()
       {NOTE_E4, SIXTEENTH_NOTE},
       {NOTE_F4, SIXTEENTH_NOTE},
       {NOTE_G4, EIGHTH_NOTE}};
-  playNotes(flagpoleTones, sizeof(flagpoleTones) / sizeof(flagpoleTones[0]));
+  playNotesNonBlocking(flagpoleTones, sizeof(flagpoleTones) / sizeof(flagpoleTones[0]));
 }
 
 void setup()
 {
+  Serial.begin(9600); // Set baud rate to 9600 for compatibility
+  delay(2000);        // Wait 2 seconds to allow Serial Monitor to open
+  Serial.println("\nSerial communication started. Testing non-blocking notes.");
+
   pinMode(BUZZER_PIN, OUTPUT);
 
-  playCoin();
-  delay(1000);
-  playPowerUp();
-  delay(1000);
-  play1Up();
-  delay(1000);
-  playGameOver();
-  delay(1000);
-  playFlagpole();
+  const int testTones[][2] = {
+      {NOTE_C4, 500},
+      {NOTE_E4, 500},
+      {NOTE_G4, 500},
+      {NOTE_C5, 500}};
+  playNotesNonBlocking(testTones, sizeof(testTones) / sizeof(testTones[0]));
 }
 
 void loop()
 {
+  notePlayer.update();
 }
