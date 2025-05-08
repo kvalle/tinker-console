@@ -11,7 +11,7 @@ void setup()
   Serial.println("\nSerial communication started.");
 
   buzzer.setup();
-  buzzer.play(buttonPressDouble);
+  buzzer.play(marioThemeStart);
 }
 
 void loop()

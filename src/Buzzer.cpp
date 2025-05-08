@@ -30,7 +30,11 @@ void Buzzer::update()
 
     unsigned long currentTime = millis();
 
-    if (currentTime - noteStartTime >= (unsigned long)notes[currentNote][1])
+    // Calculate the duration of the note including a small pause
+    unsigned long noteDuration = notes[currentNote][1];
+    unsigned long pauseDuration = 10; // 10ms pause between notes
+
+    if (currentTime - noteStartTime >= noteDuration + pauseDuration)
     {
         noTone(pin);
         currentNote++;
@@ -43,6 +47,10 @@ void Buzzer::update()
         {
             isPlaying = false;
         }
+    }
+    else if (currentTime - noteStartTime >= noteDuration)
+    {
+        noTone(pin); // Stop the tone to create a pause
     }
 }
 
