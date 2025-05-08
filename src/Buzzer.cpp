@@ -100,3 +100,37 @@ void playFlagpole()
         {NOTE_G4, EIGHTH_NOTE}};
     playNotesNonBlocking(flagpoleTones, sizeof(flagpoleTones) / sizeof(flagpoleTones[0]));
 }
+
+void playMarioThemeStart()
+{
+    const int marioThemeStart[][2] = {
+        {NOTE_E5, EIGHTH_NOTE},
+        {NOTE_E5, EIGHTH_NOTE},
+        {0, EIGHTH_NOTE}, // Rest
+        {NOTE_E5, EIGHTH_NOTE},
+        {0, EIGHTH_NOTE}, // Rest
+        {NOTE_C5, EIGHTH_NOTE},
+        {NOTE_E5, EIGHTH_NOTE},
+        {NOTE_G5, QUARTER_NOTE},
+        {0, QUARTER_NOTE}, // Rest
+        {NOTE_G4, QUARTER_NOTE}};
+
+    playNotesNonBlocking(marioThemeStart, sizeof(marioThemeStart) / sizeof(marioThemeStart[0]));
+}
+
+void playHanna()
+{
+    const int hannaTheme[][2] = {
+        {NOTE_E3, EIGHTH_NOTE},
+        {NOTE_E3, EIGHTH_NOTE},
+        {0, EIGHTH_NOTE}, // Rest
+        {NOTE_E3, EIGHTH_NOTE},
+        {0, EIGHTH_NOTE}, // Rest
+        {NOTE_C3, EIGHTH_NOTE},
+        {NOTE_E3, EIGHTH_NOTE},
+        {NOTE_G3, QUARTER_NOTE},
+        {0, QUARTER_NOTE}, // Rest
+        {NOTE_G2, QUARTER_NOTE}};
+
+    playNotesNonBlocking(hannaTheme, sizeof(hannaTheme) / sizeof(hannaTheme[0]));
+}

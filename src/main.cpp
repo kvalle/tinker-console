@@ -4,12 +4,12 @@
 void setup()
 {
   Serial.begin(9600);
-  delay(2000);
-  Serial.println("\nSerial communication started. Testing non-blocking notes.");
+  delay(1000);
+  Serial.println("\nSerial communication started.");
 
   pinMode(BUZZER_PIN, OUTPUT);
 
-  playPowerUp();
+  playMarioThemeStart();
 }
 
 void loop()
