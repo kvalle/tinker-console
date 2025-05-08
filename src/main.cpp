@@ -1,9 +1,7 @@
 #include <Arduino.h>
 #include "Buzzer.h"
 
-#define BUZZER_PIN D1
-
-NotePlayer notePlayer(BUZZER_PIN);
+Buzzer buzzer(D1);
 
 void setup()
 {
@@ -11,11 +9,11 @@ void setup()
   delay(1000);
   Serial.println("\nSerial communication started.");
 
-  notePlayer.setup();
-  playMarioThemeStart(notePlayer);
+  buzzer.setup();
+  playMarioThemeStart(buzzer);
 }
 
 void loop()
 {
-  notePlayer.update();
+  buzzer.update();
 }

@@ -92,13 +92,12 @@ const int QUARTER_NOTE = 400;
 const int EIGHTH_NOTE = 200;
 const int SIXTEENTH_NOTE = 100;
 
-class NotePlayer
+class Buzzer
 {
 public:
-    NotePlayer(int pin);
-    void start(const int (*notesArray)[2], int totalNotes);
+    Buzzer(int pin);
+    void play(const int (*notesArray)[2], int totalNotes);
     void update();
-    void playNotesNonBlocking(const int notes[][2], int numNotes);
     void setup();
     bool isPlaying;
 
@@ -110,12 +109,11 @@ private:
     unsigned long noteStartTime;
 };
 
-void playCoin(NotePlayer &notePlayer);
-void playPowerUp(NotePlayer &notePlayer);
-void play1Up(NotePlayer &notePlayer);
-void playGameOver(NotePlayer &notePlayer);
-void playFlagpole(NotePlayer &notePlayer);
-void playMarioThemeStart(NotePlayer &notePlayer);
-void playBaaBaaBlackSheep(NotePlayer &notePlayer);
+void playCoin(Buzzer &buzzer);
+void playPowerUp(Buzzer &buzzer);
+void play1Up(Buzzer &buzzer);
+void playGameOver(Buzzer &buzzer);
+void playFlagpole(Buzzer &buzzer);
+void playMarioThemeStart(Buzzer &buzzer);
 
 #endif // BUZZER_H
