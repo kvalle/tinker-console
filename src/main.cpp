@@ -2,7 +2,8 @@
 #include "Buzzer.h"
 #include "Sounds.h"
 
-Buzzer buzzer(D1);
+Buzzer buzzer1(D1);
+Buzzer buzzer2(D2);
 
 void setup()
 {
@@ -10,11 +11,15 @@ void setup()
   delay(1000);
   Serial.println("\nSerial communication started.");
 
-  buzzer.setup();
-  buzzer.play(marioThemeFull);
+  buzzer1.setup();
+  buzzer1.play(marioThemeFull);
+
+  buzzer2.setup();
+  buzzer2.play(fanfare);
 }
 
 void loop()
 {
-  buzzer.update();
+  buzzer1.update();
+  buzzer2.update();
 }
