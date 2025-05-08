@@ -96,7 +96,7 @@ class Buzzer
 {
 public:
     Buzzer(int pin);
-    void play(const int (*notesArray)[2], int totalNotes);
+    void play(const int (*notesArray)[2]);
     void update();
     void setup();
     bool isPlaying;
@@ -108,12 +108,5 @@ private:
     int currentNote;
     unsigned long noteStartTime;
 };
-
-void playCoin(Buzzer &buzzer);
-void playPowerUp(Buzzer &buzzer);
-void play1Up(Buzzer &buzzer);
-void playGameOver(Buzzer &buzzer);
-void playFlagpole(Buzzer &buzzer);
-void playMarioThemeStart(Buzzer &buzzer);
 
 #endif // BUZZER_H
