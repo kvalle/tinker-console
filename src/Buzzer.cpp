@@ -8,12 +8,8 @@ void Buzzer::play(const int (*notesArray)[2], int totalNotes)
     if (isPlaying)
         return;
 
+    notes = notesArray; // Store the pointer to the notes array
     numNotes = totalNotes;
-    for (int i = 0; i < numNotes; i++)
-    {
-        notes[i][0] = notesArray[i][0];
-        notes[i][1] = notesArray[i][1];
-    }
     currentNote = 0;
     noteStartTime = millis();
     isPlaying = true;
@@ -50,7 +46,7 @@ void Buzzer::setup()
 
 void playCoin(Buzzer &buzzer)
 {
-    const int coinTones[][2] = {
+    static const int coinTones[][2] = {
         {NOTE_E5, SIXTEENTH_NOTE},
         {NOTE_G5, SIXTEENTH_NOTE}};
     buzzer.play(coinTones, sizeof(coinTones) / sizeof(coinTones[0]));
@@ -58,7 +54,7 @@ void playCoin(Buzzer &buzzer)
 
 void playPowerUp(Buzzer &buzzer)
 {
-    const int powerUpTones[][2] = {
+    static const int powerUpTones[][2] = {
         {NOTE_C4, EIGHTH_NOTE},
         {NOTE_E4, EIGHTH_NOTE},
         {NOTE_G4, EIGHTH_NOTE},
@@ -68,7 +64,7 @@ void playPowerUp(Buzzer &buzzer)
 
 void play1Up(Buzzer &buzzer)
 {
-    const int oneUpTones[][2] = {
+    static const int oneUpTones[][2] = {
         {NOTE_C5, EIGHTH_NOTE},
         {NOTE_E5, EIGHTH_NOTE},
         {NOTE_G5, EIGHTH_NOTE},
@@ -78,7 +74,7 @@ void play1Up(Buzzer &buzzer)
 
 void playGameOver(Buzzer &buzzer)
 {
-    const int gameOverTones[][2] = {
+    static const int gameOverTones[][2] = {
         {NOTE_C5, QUARTER_NOTE},
         {NOTE_G4, QUARTER_NOTE},
         {NOTE_E4, QUARTER_NOTE},
@@ -88,7 +84,7 @@ void playGameOver(Buzzer &buzzer)
 
 void playFlagpole(Buzzer &buzzer)
 {
-    const int flagpoleTones[][2] = {
+    static const int flagpoleTones[][2] = {
         {NOTE_C4, SIXTEENTH_NOTE},
         {NOTE_D4, SIXTEENTH_NOTE},
         {NOTE_E4, SIXTEENTH_NOTE},
@@ -99,7 +95,7 @@ void playFlagpole(Buzzer &buzzer)
 
 void playMarioThemeStart(Buzzer &buzzer)
 {
-    const int marioThemeStart[][2] = {
+    static const int marioThemeStart[][2] = {
         {NOTE_E5, EIGHTH_NOTE},
         {NOTE_E5, EIGHTH_NOTE},
         {0, EIGHTH_NOTE}, // Rest

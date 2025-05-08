@@ -102,8 +102,8 @@ public:
     bool isPlaying;
 
 private:
-    const int pin;
-    int notes[100][2];
+    int pin;
+    const int (*notes)[2];
     int numNotes;
     int currentNote;
     unsigned long noteStartTime;
