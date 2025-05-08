@@ -9,6 +9,7 @@ extern const int marioOneUp[][2];
 extern const int marioGameOver[][2];
 extern const int marioFlagpole[][2];
 extern const int marioThemeStart[][2];
+extern const int marioThemeFull[][2];
 
 extern const int fanfare[][2];
 

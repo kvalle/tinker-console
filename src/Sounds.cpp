@@ -53,6 +53,61 @@ const int marioThemeStart[][2] = {
     {0, 0} // Fine
 };
 
+const int marioThemeFull[][2] = {
+    {NOTE_E5, EIGHTH_NOTE},
+    {NOTE_E5, EIGHTH_NOTE},
+    {0, EIGHTH_NOTE}, // Rest
+    {NOTE_E5, EIGHTH_NOTE},
+    {0, EIGHTH_NOTE}, // Rest
+    {NOTE_C5, EIGHTH_NOTE},
+    {NOTE_E5, EIGHTH_NOTE},
+    {NOTE_G5, QUARTER_NOTE},
+    {0, QUARTER_NOTE}, // Rest
+    {NOTE_G4, QUARTER_NOTE},
+    {0, QUARTER_NOTE}, // Rest
+
+    {NOTE_C5, EIGHTH_NOTE},
+    {NOTE_G4, EIGHTH_NOTE},
+    {0, EIGHTH_NOTE}, // Rest
+    {NOTE_E4, EIGHTH_NOTE},
+    {0, EIGHTH_NOTE}, // Rest
+    {NOTE_A4, EIGHTH_NOTE},
+    {NOTE_B4, EIGHTH_NOTE},
+    {NOTE_AS4, EIGHTH_NOTE},
+    {NOTE_A4, EIGHTH_NOTE},
+    {NOTE_G4, EIGHTH_NOTE},
+
+    {NOTE_E5, EIGHTH_NOTE},
+    {NOTE_G5, EIGHTH_NOTE},
+    {NOTE_A5, QUARTER_NOTE},
+    {NOTE_F5, EIGHTH_NOTE},
+    {NOTE_G5, EIGHTH_NOTE},
+    {NOTE_E5, EIGHTH_NOTE},
+    {NOTE_C5, EIGHTH_NOTE},
+    {NOTE_D5, EIGHTH_NOTE},
+    {NOTE_B4, QUARTER_NOTE},
+
+    {NOTE_C5, EIGHTH_NOTE},
+    {NOTE_G4, EIGHTH_NOTE},
+    {NOTE_E4, EIGHTH_NOTE},
+    {NOTE_A4, EIGHTH_NOTE},
+    {NOTE_B4, EIGHTH_NOTE},
+    {NOTE_AS4, EIGHTH_NOTE},
+    {NOTE_A4, EIGHTH_NOTE},
+    {NOTE_G4, EIGHTH_NOTE},
+    {NOTE_E5, EIGHTH_NOTE},
+    {NOTE_G5, EIGHTH_NOTE},
+
+    {NOTE_A5, QUARTER_NOTE},
+    {NOTE_F5, EIGHTH_NOTE},
+    {NOTE_G5, EIGHTH_NOTE},
+    {NOTE_E5, EIGHTH_NOTE},
+    {NOTE_C5, EIGHTH_NOTE},
+    {NOTE_D5, EIGHTH_NOTE},
+    {NOTE_B4, QUARTER_NOTE},
+    {0, 0} // Fine
+};
+
 const int fanfare[][2] = {
     {NOTE_C4, EIGHTH_NOTE},
     {NOTE_E4, EIGHTH_NOTE},
