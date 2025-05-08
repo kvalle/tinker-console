@@ -1,10 +1,6 @@
 #ifndef BUZZER_H
 #define BUZZER_H
 
-#include <Arduino.h>
-
-#define BUZZER_PIN D1
-
 #define NOTE_C1 33    // C1
 #define NOTE_CS1 35   // C#1/Db1
 #define NOTE_D1 37    // D1
@@ -96,28 +92,30 @@ const int QUARTER_NOTE = 400;
 const int EIGHTH_NOTE = 200;
 const int SIXTEENTH_NOTE = 100;
 
-struct NotePlayer
+class NotePlayer
 {
+public:
+    NotePlayer(int pin);
     void start(const int (*notesArray)[2], int totalNotes);
     void update();
+    void playNotesNonBlocking(const int notes[][2], int numNotes);
+    void setup();
     bool isPlaying;
 
 private:
+    const int pin;
     int notes[100][2];
     int numNotes;
     int currentNote;
     unsigned long noteStartTime;
 };
 
-void playNotesNonBlocking(const int notes[][2], int numNotes);
-void playCoin();
-void playPowerUp();
-void play1Up();
-void playGameOver();
-void playFlagpole();
-void playMarioThemeStart();
-void playHanna();
-
-NotePlayer &getNotePlayer();
+void playCoin(NotePlayer &notePlayer);
+void playPowerUp(NotePlayer &notePlayer);
+void play1Up(NotePlayer &notePlayer);
+void playGameOver(NotePlayer &notePlayer);
+void playFlagpole(NotePlayer &notePlayer);
+void playMarioThemeStart(NotePlayer &notePlayer);
+void playBaaBaaBlackSheep(NotePlayer &notePlayer);
 
 #endif // BUZZER_H

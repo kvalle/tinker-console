@@ -1,4 +1,7 @@
+#include <Arduino.h>
 #include "Buzzer.h"
+
+NotePlayer::NotePlayer(int pin) : isPlaying(false), pin(pin), numNotes(0), currentNote(0), noteStartTime(0) {}
 
 void NotePlayer::start(const int (*notesArray)[2], int totalNotes)
 {
@@ -11,7 +14,7 @@ void NotePlayer::start(const int (*notesArray)[2], int totalNotes)
     currentNote = 0;
     noteStartTime = millis();
     isPlaying = true;
-    tone(BUZZER_PIN, notes[currentNote][0]);
+    tone(pin, notes[currentNote][0]);
 }
 
 void NotePlayer::update()
@@ -23,12 +26,12 @@ void NotePlayer::update()
 
     if (currentTime - noteStartTime >= (unsigned long)notes[currentNote][1])
     {
-        noTone(BUZZER_PIN);
+        noTone(pin);
         currentNote++;
         if (currentNote < numNotes)
         {
             noteStartTime = currentTime;
-            tone(BUZZER_PIN, notes[currentNote][0]);
+            tone(pin, notes[currentNote][0]);
         }
         else
         {
@@ -37,60 +40,58 @@ void NotePlayer::update()
     }
 }
 
-NotePlayer notePlayer;
-
-NotePlayer &getNotePlayer()
+void NotePlayer::playNotesNonBlocking(const int notes[][2], int numNotes)
 {
-    return notePlayer;
-}
-
-void playNotesNonBlocking(const int notes[][2], int numNotes)
-{
-    if (notePlayer.isPlaying)
+    if (isPlaying)
         return;
 
-    notePlayer.start(notes, numNotes);
+    start(notes, numNotes);
 }
 
-void playCoin()
+void NotePlayer::setup()
+{
+    pinMode(pin, OUTPUT);
+}
+
+void playCoin(NotePlayer &notePlayer)
 {
     const int coinTones[][2] = {
         {NOTE_E5, SIXTEENTH_NOTE},
         {NOTE_G5, SIXTEENTH_NOTE}};
-    playNotesNonBlocking(coinTones, sizeof(coinTones) / sizeof(coinTones[0]));
+    notePlayer.playNotesNonBlocking(coinTones, sizeof(coinTones) / sizeof(coinTones[0]));
 }
 
-void playPowerUp()
+void playPowerUp(NotePlayer &notePlayer)
 {
     const int powerUpTones[][2] = {
         {NOTE_C4, EIGHTH_NOTE},
         {NOTE_E4, EIGHTH_NOTE},
         {NOTE_G4, EIGHTH_NOTE},
         {NOTE_C5, EIGHTH_NOTE}};
-    playNotesNonBlocking(powerUpTones, sizeof(powerUpTones) / sizeof(powerUpTones[0]));
+    notePlayer.playNotesNonBlocking(powerUpTones, sizeof(powerUpTones) / sizeof(powerUpTones[0]));
 }
 
-void play1Up()
+void play1Up(NotePlayer &notePlayer)
 {
     const int oneUpTones[][2] = {
         {NOTE_C5, EIGHTH_NOTE},
         {NOTE_E5, EIGHTH_NOTE},
         {NOTE_G5, EIGHTH_NOTE},
         {NOTE_C6, EIGHTH_NOTE}};
-    playNotesNonBlocking(oneUpTones, sizeof(oneUpTones) / sizeof(oneUpTones[0]));
+    notePlayer.playNotesNonBlocking(oneUpTones, sizeof(oneUpTones) / sizeof(oneUpTones[0]));
 }
 
-void playGameOver()
+void playGameOver(NotePlayer &notePlayer)
 {
     const int gameOverTones[][2] = {
         {NOTE_C5, QUARTER_NOTE},
         {NOTE_G4, QUARTER_NOTE},
         {NOTE_E4, QUARTER_NOTE},
         {NOTE_C4, HALF_NOTE}};
-    playNotesNonBlocking(gameOverTones, sizeof(gameOverTones) / sizeof(gameOverTones[0]));
+    notePlayer.playNotesNonBlocking(gameOverTones, sizeof(gameOverTones) / sizeof(gameOverTones[0]));
 }
 
-void playFlagpole()
+void playFlagpole(NotePlayer &notePlayer)
 {
     const int flagpoleTones[][2] = {
         {NOTE_C4, SIXTEENTH_NOTE},
@@ -98,10 +99,10 @@ void playFlagpole()
         {NOTE_E4, SIXTEENTH_NOTE},
         {NOTE_F4, SIXTEENTH_NOTE},
         {NOTE_G4, EIGHTH_NOTE}};
-    playNotesNonBlocking(flagpoleTones, sizeof(flagpoleTones) / sizeof(flagpoleTones[0]));
+    notePlayer.playNotesNonBlocking(flagpoleTones, sizeof(flagpoleTones) / sizeof(flagpoleTones[0]));
 }
 
-void playMarioThemeStart()
+void playMarioThemeStart(NotePlayer &notePlayer)
 {
     const int marioThemeStart[][2] = {
         {NOTE_E5, EIGHTH_NOTE},
@@ -115,10 +116,10 @@ void playMarioThemeStart()
         {0, QUARTER_NOTE}, // Rest
         {NOTE_G4, QUARTER_NOTE}};
 
-    playNotesNonBlocking(marioThemeStart, sizeof(marioThemeStart) / sizeof(marioThemeStart[0]));
+    notePlayer.playNotesNonBlocking(marioThemeStart, sizeof(marioThemeStart) / sizeof(marioThemeStart[0]));
 }
 
-void playHanna()
+void playHanna(NotePlayer &notePlayer)
 {
     const int hannaTheme[][2] = {
         {NOTE_E3, EIGHTH_NOTE},
@@ -132,5 +133,35 @@ void playHanna()
         {0, QUARTER_NOTE}, // Rest
         {NOTE_G2, QUARTER_NOTE}};
 
-    playNotesNonBlocking(hannaTheme, sizeof(hannaTheme) / sizeof(hannaTheme[0]));
+    notePlayer.playNotesNonBlocking(hannaTheme, sizeof(hannaTheme) / sizeof(hannaTheme[0]));
+}
+
+void playBaaBaaBlackSheep(NotePlayer &notePlayer)
+{
+    const int baaBaaBlackSheep[][2] = {
+        {NOTE_G4, QUARTER_NOTE},
+        {NOTE_G4, QUARTER_NOTE},
+        {NOTE_D4, QUARTER_NOTE},
+        {NOTE_E4, QUARTER_NOTE},
+        {NOTE_C4, QUARTER_NOTE},
+        {NOTE_C4, QUARTER_NOTE},
+        {NOTE_D4, HALF_NOTE},
+        {0, QUARTER_NOTE}, // Rest
+        {NOTE_E4, QUARTER_NOTE},
+        {NOTE_E4, QUARTER_NOTE},
+        {NOTE_F4, QUARTER_NOTE},
+        {NOTE_G4, QUARTER_NOTE},
+        {NOTE_G4, QUARTER_NOTE},
+        {NOTE_F4, QUARTER_NOTE},
+        {NOTE_E4, HALF_NOTE},
+        {0, QUARTER_NOTE}, // Rest
+        {NOTE_D4, QUARTER_NOTE},
+        {NOTE_D4, QUARTER_NOTE},
+        {NOTE_E4, QUARTER_NOTE},
+        {NOTE_C4, QUARTER_NOTE},
+        {NOTE_D4, QUARTER_NOTE},
+        {NOTE_G4, QUARTER_NOTE},
+        {NOTE_G4, HALF_NOTE}};
+
+    notePlayer.playNotesNonBlocking(baaBaaBlackSheep, sizeof(baaBaaBlackSheep) / sizeof(baaBaaBlackSheep[0]));
 }
