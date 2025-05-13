@@ -11,6 +11,16 @@ Atm_button button2;
 Atm_button button3;
 Atm_button button4;
 
+void handleShortButtonPress(int idx, int v, int up)
+{
+  buzzer1.play(marioCoin);
+}
+
+void handleLongButtonPress(int idx, int v, int up)
+{
+  buzzer1.play(marioGameOver);
+}
+
 void handleButtonPress(int idx, int v, int up)
 {
   if (v)
@@ -49,7 +59,10 @@ void setup()
   buzzer2.setup();
 
   button1.begin(D0)
-      .onPress(handleButtonPress, 1);
+      .longPress(2, 1000)
+      .onPress(1, handleShortButtonPress, 1)
+      .onPress(2, handleLongButtonPress, 1);
+
   button2.begin(D5)
       .onPress(handleButtonPress, 2);
   button3.begin(D6)
