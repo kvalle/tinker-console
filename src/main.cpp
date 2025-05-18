@@ -11,40 +11,77 @@ Atm_button button2;
 Atm_button button3;
 Atm_button button4;
 
+enum ConsoleMode
+{
+  CONSOLE_MODE_1,
+  CONSOLE_MODE_2,
+  CONSOLE_MODE_3,
+  CONSOLE_MODE_4
+};
+
+ConsoleMode currentMode = CONSOLE_MODE_1;
+
+void playSoundForCurrentMode()
+{
+  switch (currentMode)
+  {
+  case CONSOLE_MODE_1:
+    buzzer1.play(marioCoin);
+    break;
+  case CONSOLE_MODE_2:
+    buzzer1.play(marioPowerUp);
+    break;
+  case CONSOLE_MODE_3:
+    buzzer1.play(marioOneUp);
+    break;
+  case CONSOLE_MODE_4:
+    buzzer1.play(marioGameOver);
+    break;
+  }
+}
+
 void handleShortButtonPress(int idx, int v, int up)
 {
-  buzzer1.play(marioCoin);
+  if (v)
+  {
+    if (idx == 1)
+    {
+      playSoundForCurrentMode();
+    }
+    else if (idx == 2)
+    {
+      playSoundForCurrentMode();
+    }
+    else if (idx == 3)
+    {
+      playSoundForCurrentMode();
+    }
+    else if (idx == 4)
+    {
+      playSoundForCurrentMode();
+    }
+  }
 }
 
 void handleLongButtonPress(int idx, int v, int up)
 {
-  buzzer1.play(marioGameOver);
-}
-
-void handleButtonPress(int idx, int v, int up)
-{
   if (v)
   {
-    Serial.println("Button pressed: " + String(idx));
     if (idx == 1)
     {
-      Serial.println("Button 1 pressed");
-      buzzer1.play(marioCoin);
+      currentMode = CONSOLE_MODE_1;
     }
     else if (idx == 2)
     {
-      Serial.println("Button 2 pressed");
-      buzzer1.play(marioPowerUp);
+      currentMode = CONSOLE_MODE_2;
     }
     else if (idx == 3)
     {
-      Serial.println("Button 3 pressed");
-      buzzer1.play(marioOneUp);
+      currentMode = CONSOLE_MODE_3;
     }
     else if (idx == 4)
     {
-      Serial.println("Button 4 pressed");
-      buzzer1.play(marioGameOver);
+      currentMode = CONSOLE_MODE_4;
     }
   }
 }
@@ -62,13 +99,18 @@ void setup()
       .longPress(2, 1000)
       .onPress(1, handleShortButtonPress, 1)
       .onPress(2, handleLongButtonPress, 1);
-
   button2.begin(D5)
-      .onPress(handleButtonPress, 2);
+      .longPress(2, 1000)
+      .onPress(1, handleShortButtonPress, 2)
+      .onPress(2, handleLongButtonPress, 2);
   button3.begin(D6)
-      .onPress(handleButtonPress, 3);
+      .longPress(2, 1000)
+      .onPress(1, handleShortButtonPress, 3)
+      .onPress(2, handleLongButtonPress, 3);
   button4.begin(D7)
-      .onPress(handleButtonPress, 4);
+      .longPress(2, 1000)
+      .onPress(1, handleShortButtonPress, 4)
+      .onPress(2, handleLongButtonPress, 4);
 
   buzzer1.play(fanfare);
 }
