@@ -10,9 +10,10 @@ void Buzzer::setBPM(int bpm)
 
 void Buzzer::play(const int (*notesArray)[2])
 {
-    notes = notesArray;
     if (isPlaying)
         return;
+
+    notes = notesArray;
 
     // Calculate the number of notes if not provided
     int totalNotes = 0;
