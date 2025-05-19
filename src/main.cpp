@@ -11,6 +11,9 @@ Atm_button button2;
 Atm_button button3;
 Atm_button button4;
 
+uint16_t potAvgBuffer[16];
+Atm_analog pot;
+
 enum ConsoleMode
 {
   CONSOLE_MODE_1,
@@ -91,6 +94,12 @@ void setup()
   Serial.begin(9600);
   delay(1000);
   Serial.println("\nSerial communication started.");
+
+  pot.begin(A0)
+      .range(50, 300)
+      .average(potAvgBuffer, sizeof(potAvgBuffer))
+      .onChange([](int idx, int v, int up)
+                { Serial.println("Potentiometer value: " + String(v)); });
 
   buzzer1.setup();
   buzzer2.setup();
