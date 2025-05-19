@@ -86,6 +86,8 @@
 #define NOTE_AS7 3729 // A#7/Bb7
 #define NOTE_B7 3951  // B7
 
+// Constants for note durations
+// These values are based on a 150 BPM tempo
 const int WHOLE_NOTE = 1600;
 const int HALF_NOTE = 800;
 const int QUARTER_NOTE = 400;
@@ -95,18 +97,20 @@ const int SIXTEENTH_NOTE = 100;
 class Buzzer
 {
 public:
-    Buzzer(int pin);
+    Buzzer(int pin, int bpm = 37); // Default BPM is 37
+    void setBPM(int bpm);
     void play(const int (*notesArray)[2]);
     void update();
     void setup();
-    bool isPlaying;
 
 private:
     int pin;
+    int bpm;
     const int (*notes)[2];
     int numNotes;
     int currentNote;
     unsigned long noteStartTime;
+    bool isPlaying;
 };
 
 #endif // BUZZER_H

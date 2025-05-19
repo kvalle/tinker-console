@@ -3,8 +3,8 @@
 #include "Buzzer.h"
 #include "Sounds.h"
 
-Buzzer buzzer1(D1);
-Buzzer buzzer2(D2);
+Buzzer buzzer1(D1, 120);
+Buzzer buzzer2(D2, 150);
 
 Atm_button button1;
 Atm_button button2;
@@ -49,11 +49,15 @@ void handleShortButtonPress(int idx, int v, int up)
   {
     if (idx == 1)
     {
-      playSoundForCurrentMode();
+      Serial.println("Playing sound 1");
+      buzzer1.play(popcornMelody);
+      // playSoundForCurrentMode();
     }
     else if (idx == 2)
     {
-      playSoundForCurrentMode();
+      Serial.println("Playing sound 2");
+      buzzer2.play(popcornMelody);
+      // playSoundForCurrentMode();
     }
     else if (idx == 3)
     {

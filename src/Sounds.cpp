@@ -133,12 +133,20 @@ const int buttonPressDouble[][2] = {
 };
 
 const int popcornMelody[][2] = {
-    {NOTE_B3, EIGHTH_NOTE},
-    {NOTE_A3, EIGHTH_NOTE},
-    {NOTE_B3, EIGHTH_NOTE},
-    {NOTE_FS3, EIGHTH_NOTE},
-    {NOTE_E3, SIXTEENTH_NOTE},
-    {NOTE_FS3, EIGHTH_NOTE},
-    {NOTE_B2, HALF_NOTE},
+    {NOTE_B4, EIGHTH_NOTE},
+    {NOTE_A4, EIGHTH_NOTE},
+    {NOTE_B4, EIGHTH_NOTE},
+    {NOTE_FS4, EIGHTH_NOTE},
+    {NOTE_E4, SIXTEENTH_NOTE},
+    {NOTE_FS4, EIGHTH_NOTE},
+    {NOTE_B3, SIXTEENTH_NOTE},
+    {0, QUARTER_NOTE}, // Rest
+    {NOTE_B4, EIGHTH_NOTE},
+    {NOTE_A4, EIGHTH_NOTE},
+    {NOTE_B4, EIGHTH_NOTE},
+    {NOTE_FS4, EIGHTH_NOTE},
+    {NOTE_E4, SIXTEENTH_NOTE},
+    {NOTE_FS4, EIGHTH_NOTE},
+    {NOTE_B3, SIXTEENTH_NOTE},
     {0, 0} // Fine
 };
