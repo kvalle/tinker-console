@@ -28,7 +28,7 @@ private:
     uint16_t numPixels;
     unsigned long lastUpdate = 0;
     uint16_t speed = 100;
-    uint8_t effect = 0;
+    EffectType effect = EffectType::Chase;
     uint16_t pos = 0;
 
     void effectChase();

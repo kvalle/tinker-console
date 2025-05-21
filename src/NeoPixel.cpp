@@ -18,13 +18,13 @@ void NeoPixel::setSpeed(uint16_t ms)
 
 void NeoPixel::setEffect(EffectType effectType)
 {
-    effect = static_cast<uint8_t>(effectType);
+    effect = effectType;
     pos = 0;
 }
 
 void NeoPixel::nextEffect()
 {
-    setEffect(static_cast<EffectType>((effect + 1) % EFFECT_COUNT));
+    effect = static_cast<EffectType>((static_cast<int>(effect) + 1) % EFFECT_COUNT);
 }
 
 void NeoPixel::update()
@@ -36,16 +36,16 @@ void NeoPixel::update()
 
     switch (effect)
     {
-    case 0:
+    case EffectType::Chase:
         effectChase();
         break;
-    case 1:
+    case EffectType::Rainbow:
         effectRainbow();
         break;
-    case 2:
+    case EffectType::ColorWave:
         effectColorWave();
         break;
-    case 3:
+    case EffectType::TheaterChase:
         effectTheaterChase();
         break;
     }
