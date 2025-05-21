@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <Automaton.h>
 #include "Buzzer.h"
+#include "NeoPixel.h"
 #include "Sounds.h"
 
 Buzzer buzzer1(D1, 120);
@@ -13,6 +14,9 @@ Atm_button button4;
 
 uint16_t potAvgBuffer[16];
 Atm_analog pot;
+
+Adafruit_NeoPixel pixels(9, D4, NEO_GRB + NEO_KHZ800);
+NeoPixel neo(pixels);
 
 enum ConsoleMode
 {
@@ -76,10 +80,12 @@ void handleLongButtonPress(int idx, int v, int up)
   {
     if (idx == 1)
     {
+      neo.setEffect(0);
       currentMode = CONSOLE_MODE_1;
     }
     else if (idx == 2)
     {
+      neo.setEffect(1);
       currentMode = CONSOLE_MODE_2;
     }
     else if (idx == 3)
@@ -99,11 +105,17 @@ void setup()
   delay(1000);
   Serial.println("\nSerial communication started.");
 
+  pixels.begin();
+  pixels.clear();
+  pixels.show();
+
   pot.begin(A0)
-      .range(50, 300)
+      .range(20, 500)
       .average(potAvgBuffer, sizeof(potAvgBuffer))
       .onChange([](int idx, int v, int up)
-                { Serial.println("Potentiometer value: " + String(v)); });
+                { 
+                  neo.setSpeed(v);
+                  Serial.println("Potentiometer value: " + String(v)); });
 
   buzzer1.setup();
   buzzer2.setup();
@@ -133,4 +145,5 @@ void loop()
   automaton.run();
   buzzer1.update();
   buzzer2.update();
+  neo.update();
 }
