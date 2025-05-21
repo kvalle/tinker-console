@@ -3,13 +3,14 @@
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
 
-constexpr uint8_t EFFECT_COUNT = 3;
+constexpr uint8_t EFFECT_COUNT = 4;
 
 enum class EffectType
 {
     Chase,
     Rainbow,
-    ColorWave
+    ColorWave,
+    TheaterChase
 };
 
 class NeoPixel
@@ -33,4 +34,5 @@ private:
     void effectChase();
     void effectRainbow();
     void effectColorWave();
+    void effectTheaterChase();
 };

@@ -45,6 +45,9 @@ void NeoPixel::update()
     case 2:
         effectColorWave();
         break;
+    case 3:
+        effectTheaterChase();
+        break;
     }
 }
 
@@ -70,6 +73,20 @@ void NeoPixel::effectColorWave()
         uint8_t colorIndex = (pos + i) % 256;
         uint32_t color = strip.ColorHSV(colorIndex * 256, 255, 255);
         strip.setPixelColor(i, color);
+    }
+    strip.show();
+    pos++;
+}
+
+void NeoPixel::effectTheaterChase()
+{
+    strip.clear();
+    for (int i = 0; i < numPixels; i++)
+    {
+        if ((i + pos) % 3 == 0)
+        {
+            strip.setPixelColor(i, strip.Color(255, 0, 255)); // Rosa-lilla
+        }
     }
     strip.show();
     pos++;

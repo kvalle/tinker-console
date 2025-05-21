@@ -94,6 +94,7 @@ void handleLongButtonPress(int idx, int v, int up)
     }
     else if (idx == 4)
     {
+      neo.setEffect(EffectType::TheaterChase);
       currentMode = CONSOLE_MODE_4;
     }
   }
