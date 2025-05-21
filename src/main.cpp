@@ -89,6 +89,7 @@ void handleLongButtonPress(int idx, int v, int up)
     }
     else if (idx == 3)
     {
+      neo.setEffect(EffectType::ColorWave);
       currentMode = CONSOLE_MODE_3;
     }
     else if (idx == 4)

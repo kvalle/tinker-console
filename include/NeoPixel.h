@@ -3,12 +3,13 @@
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
 
-constexpr uint8_t EFFECT_COUNT = 2; // Oppdater dette tallet når nye effekter legges til
+constexpr uint8_t EFFECT_COUNT = 3;
 
 enum class EffectType
 {
     Chase,
-    Rainbow
+    Rainbow,
+    ColorWave
 };
 
 class NeoPixel
@@ -31,4 +32,5 @@ private:
 
     void effectChase();
     void effectRainbow();
+    void effectColorWave();
 };

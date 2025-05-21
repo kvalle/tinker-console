@@ -42,6 +42,9 @@ void NeoPixel::update()
     case 1:
         effectRainbow();
         break;
+    case 2:
+        effectColorWave();
+        break;
     }
 }
 
@@ -56,6 +59,18 @@ void NeoPixel::effectChase()
 void NeoPixel::effectRainbow()
 {
     strip.rainbow(pos * 256);
+    strip.show();
+    pos++;
+}
+
+void NeoPixel::effectColorWave()
+{
+    for (uint16_t i = 0; i < numPixels; i++)
+    {
+        uint8_t colorIndex = (pos + i) % 256;
+        uint32_t color = strip.ColorHSV(colorIndex * 256, 255, 255);
+        strip.setPixelColor(i, color);
+    }
     strip.show();
     pos++;
 }
