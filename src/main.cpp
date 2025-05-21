@@ -15,8 +15,7 @@ Atm_button button4;
 uint16_t potAvgBuffer[16];
 Atm_analog pot;
 
-Adafruit_NeoPixel pixels(9, D4, NEO_GRB + NEO_KHZ800);
-NeoPixel neo(pixels);
+NeoPixel neo(D4, 9);
 
 enum ConsoleMode
 {
@@ -105,9 +104,7 @@ void setup()
   delay(1000);
   Serial.println("\nSerial communication started.");
 
-  pixels.begin();
-  pixels.clear();
-  pixels.show();
+  neo.setup();
 
   pot.begin(A0)
       .range(20, 500)

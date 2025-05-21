@@ -1,6 +1,15 @@
 #include "NeoPixel.h"
 
-NeoPixel::NeoPixel(Adafruit_NeoPixel &s) : strip(s) {}
+NeoPixel::NeoPixel(uint8_t pin, uint16_t numLeds)
+    : strip(numLeds, pin, NEO_GRB + NEO_KHZ800),
+      numPixels(numLeds) {}
+
+void NeoPixel::setup()
+{
+    strip.begin();
+    strip.clear();
+    strip.show();
+}
 
 void NeoPixel::setSpeed(uint16_t ms)
 {
@@ -15,7 +24,7 @@ void NeoPixel::setEffect(uint8_t effectIndex)
 
 void NeoPixel::nextEffect()
 {
-    setEffect((effect + 1) % 2); // 2 effekter foreløpig
+    setEffect((effect + 1) % 2); // 2 effekter
 }
 
 void NeoPixel::update()
@@ -39,7 +48,7 @@ void NeoPixel::update()
 void NeoPixel::effectChase()
 {
     strip.clear();
-    strip.setPixelColor(pos % strip.numPixels(), strip.Color(255, 0, 0));
+    strip.setPixelColor(pos % numPixels, strip.Color(255, 0, 0));
     strip.show();
     pos++;
 }
