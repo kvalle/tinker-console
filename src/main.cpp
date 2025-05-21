@@ -79,12 +79,12 @@ void handleLongButtonPress(int idx, int v, int up)
   {
     if (idx == 1)
     {
-      neo.setEffect(0);
+      neo.setEffect(EffectType::Chase);
       currentMode = CONSOLE_MODE_1;
     }
     else if (idx == 2)
     {
-      neo.setEffect(1);
+      neo.setEffect(EffectType::Rainbow);
       currentMode = CONSOLE_MODE_2;
     }
     else if (idx == 3)

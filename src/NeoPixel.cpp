@@ -16,15 +16,15 @@ void NeoPixel::setSpeed(uint16_t ms)
     speed = ms;
 }
 
-void NeoPixel::setEffect(uint8_t effectIndex)
+void NeoPixel::setEffect(EffectType effectType)
 {
-    effect = effectIndex;
+    effect = static_cast<uint8_t>(effectType);
     pos = 0;
 }
 
 void NeoPixel::nextEffect()
 {
-    setEffect((effect + 1) % 2); // 2 effekter
+    setEffect(static_cast<EffectType>((effect + 1) % EFFECT_COUNT));
 }
 
 void NeoPixel::update()

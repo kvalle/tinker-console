@@ -3,6 +3,14 @@
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
 
+constexpr uint8_t EFFECT_COUNT = 2; // Oppdater dette tallet når nye effekter legges til
+
+enum class EffectType
+{
+    Chase,
+    Rainbow
+};
+
 class NeoPixel
 {
 public:
@@ -11,7 +19,7 @@ public:
     void update();
     void setSpeed(uint16_t ms);
     void nextEffect();
-    void setEffect(uint8_t effectIndex);
+    void setEffect(EffectType effectType);
 
 private:
     Adafruit_NeoPixel strip;
