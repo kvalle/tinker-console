@@ -14,6 +14,10 @@ I used [Fritzing](https://fritzing.org/) to draw the diagram.
 
 ![Diagram of breadboard setup for prototyping](/docs/diagrams/breadboard.png)
 
+Here is a video of the prototype in action, with some early code:
+
+https://github.com/kvalle/tinker-console/raw/refs/heads/main/docs/pics/breadboard-prototype.mov
+
 ## Preparing for soldering
 
 To prepare for soldering I made a simple scematic diagram by hand, to make an overview of all the connections. It's not pretty, but helpful for the next step.
