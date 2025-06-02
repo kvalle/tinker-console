@@ -6,6 +6,8 @@ The **Tinker Console** is an interactive, play-focused control panel designed fo
 
 The main goal is to spark curiosity and give the child something tactile to play with. When the child presses a button, turns the knob, or triggers any input, the console responds with colorful lighting effects and simple sounds, creating an engaging “cause-and-effect” experience.
 
+![Illustration drawing of a child playing with the Tinker Console](/docs/pics/illustration.png)
+
 ## Making the prototype
 
 The first step was to wire up all the components, make sure I could get them to work properly, and make the basic code for controlling them. This is the wiring diagram with the basic components on breadboards.
