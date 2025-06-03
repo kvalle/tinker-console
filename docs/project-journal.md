@@ -22,9 +22,7 @@ I wired the prototype up on breadboards and played around with the components un
 ![Picture of the breadboard setup, seen from above](/docs/pics/breadboard-over.jpg)
 
 Then I made some code to make sure I could change state using the buttons, display different effects on the NeoPixel, and ajust speed on the pot.
-Here is a video of the prototype in action, with some early code, making sure I have the needed parts working.
-
-https://github.com/kvalle/tinker-console/raw/refs/heads/main/docs/pics/breadboard-prototype.m4v
+Here is a [video of the prototype in action](https://github.com/kvalle/tinker-console/raw/refs/heads/main/docs/pics/breadboard-prototype.m4v), with some early code, making sure I have the needed parts working.
 
 ## Preparing for soldering
 
