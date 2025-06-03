@@ -29,3 +29,9 @@ To prepare for soldering I made a simple scematic diagram by hand, to make an ov
 Based on this, I prepared the layout for the veroboard/stripboard. I used [DIY Layout Creator](https://github.com/bancika/diy-layout-creator) to draw this.
 
 ![Diagram of veroboard layout for soldering](/docs/diagrams/vero.png)
+
+## Thinking about the enclosure
+
+I received the big arcade machien buttons I ordered, and wanted to see how they would look on the console. The plan is to build a simple wooden box as enclsure for the project. But to make it look better the front will be laser cut from acrylic. Here is the first test cut for the panel:
+
+![First test cut for the console front panel with buttons inserted](/docs/pics/front-panel-prototype.jpg)
