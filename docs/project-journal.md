@@ -16,9 +16,15 @@ I used [Fritzing](https://fritzing.org/) to draw the diagram.
 
 ![Diagram of breadboard setup for prototyping](/docs/diagrams/breadboard.png)
 
-Here is a video of the prototype in action, with some early code:
+I wired the prototype up on breadboards and played around with the components until I had everything working individually.
 
-https://github.com/kvalle/tinker-console/raw/refs/heads/main/docs/pics/breadboard-prototype.mov
+![Picture of the breadboard setup, seen from the side](/docs/pics/breadboard-side.jpg)
+![Picture of the breadboard setup, seen from above](/docs/pics/breadboard-over.jpg)
+
+Then I made some code to make sure I could change state using the buttons, display different effects on the NeoPixel, and ajust speed on the pot.
+Here is a video of the prototype in action, with some early code, making sure I have the needed parts working.
+
+https://github.com/kvalle/tinker-console/raw/refs/heads/main/docs/pics/breadboard-prototype.m4v
 
 ## Preparing for soldering
 
