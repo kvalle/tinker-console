@@ -244,18 +244,6 @@
       <point x="4.995" y="3.3"/>
     </diylc.connectivity.TraceCut>
     <diylc.connectivity.TraceCut>
-      <name>Cut18</name>
-      <alpha>127</alpha>
-      <size value="0.08" unit="in"/>
-      <fillColor hex="ffffff"/>
-      <borderColor hex="ff0000"/>
-      <boardColor hex="f8ebb3"/>
-      <cutBetweenHoles>false</cutBetweenHoles>
-      <orientation>VERTICAL</orientation>
-      <holeSpacing value="0.1" unit="in"/>
-      <point x="4.499999999999999" y="2.3"/>
-    </diylc.connectivity.TraceCut>
-    <diylc.connectivity.TraceCut>
       <name>Cut19</name>
       <alpha>127</alpha>
       <size value="0.08" unit="in"/>
@@ -352,9 +340,9 @@
       <name>J5</name>
       <alpha>127</alpha>
       <points>
-        <point x="4.3" y="3.3"/>
+        <point x="4.3" y="3.2"/>
         <point x="4.3" y="2.7"/>
-        <point x="4.3" y="3.0"/>
+        <point x="4.3" y="2.95"/>
       </points>
       <bodyColor hex="ffffff"/>
       <borderColor hex="000000"/>
@@ -387,31 +375,12 @@
       <style>SOLID</style>
     </diylc.connectivity.Jumper>
     <diylc.connectivity.Jumper>
-      <name>J8</name>
-      <alpha>127</alpha>
-      <points>
-        <point x="3.4" y="2.2"/>
-        <point x="3.4" y="3.2"/>
-        <point x="3.4" y="2.7"/>
-      </points>
-      <bodyColor hex="ffffff"/>
-      <borderColor hex="000000"/>
-      <labelColor hex="000000"/>
-      <leadColor hex="0000ff"/>
-      <display>NAME</display>
-      <flipStanding>false</flipStanding>
-      <labelOriantation>Directional</labelOriantation>
-      <moveLabel>false</moveLabel>
-      <hideShortLeads>false</hideShortLeads>
-      <style>SOLID</style>
-    </diylc.connectivity.Jumper>
-    <diylc.connectivity.Jumper>
       <name>J9</name>
       <alpha>127</alpha>
       <points>
-        <point x="3.6" y="3.1"/>
-        <point x="3.6" y="2.1"/>
-        <point x="3.6" y="2.6"/>
+        <point x="3.4" y="3.1"/>
+        <point x="3.4" y="2.1"/>
+        <point x="3.4" y="2.6"/>
       </points>
       <bodyColor hex="ffffff"/>
       <borderColor hex="000000"/>
@@ -847,8 +816,8 @@
       <width value="0.125" unit="in"/>
       <points>
         <point x="3.3" y="1.7"/>
-        <point x="3.3" y="2.2"/>
-        <point x="3.3" y="1.95"/>
+        <point x="3.3" y="2.3"/>
+        <point x="3.3" y="2.0"/>
       </points>
       <bodyColor hex="82cffd"/>
       <borderColor hex="5b90b1"/>
@@ -1340,11 +1309,11 @@
       <alpha>127</alpha>
       <orientation>DEFAULT</orientation>
       <controlPoints>
-        <point x="3.2" y="2.3"/>
         <point x="3.2" y="2.4"/>
         <point x="3.2" y="2.5"/>
         <point x="3.2" y="2.6"/>
         <point x="3.2" y="2.7"/>
+        <point x="3.2" y="2.8"/>
       </controlPoints>
       <rowCount>1</rowCount>
       <columnCount>5</columnCount>
@@ -1637,7 +1606,7 @@
         <point x="0.6" y="1.7"/>
         <point x="0.6" y="2.0"/>
         <point x="1.0" y="2.0"/>
-        <point x="3.2" y="2.3"/>
+        <point x="3.2" y="2.8"/>
       </controlPoints2>
       <color hex="000000"/>
       <pointCount>FOUR</pointCount>
@@ -1971,16 +1940,6 @@
       <orientation>DEFAULT</orientation>
     </diylc.misc.Label>
     <diylc.misc.Label>
-      <name>LAB11</name>
-      <point x="4.794999999999999" y="3.3"/>
-      <text>D0</text>
-      <font name="Dialog" size="14" style="0"/>
-      <color hex="000000"/>
-      <horizontalAlignment>CENTER</horizontalAlignment>
-      <verticalAlignment>CENTER</verticalAlignment>
-      <orientation>DEFAULT</orientation>
-    </diylc.misc.Label>
-    <diylc.misc.Label>
       <name>LAB12</name>
       <point x="4.794999999999999" y="3.1999999999999993"/>
       <text>D1</text>
@@ -2055,7 +2014,7 @@
       <point x="4.794999999999999" y="2.6999999999999993"/>
       <text>3V3</text>
       <font name="Dialog" size="14" style="0"/>
-      <color hex="000000"/>
+      <color hex="666666"/>
       <horizontalAlignment>CENTER</horizontalAlignment>
       <verticalAlignment>CENTER</verticalAlignment>
       <orientation>DEFAULT</orientation>
@@ -2146,6 +2105,36 @@
       <text>GND</text>
       <font name="Dialog" size="14" style="0"/>
       <color hex="000000"/>
+      <horizontalAlignment>CENTER</horizontalAlignment>
+      <verticalAlignment>CENTER</verticalAlignment>
+      <orientation>DEFAULT</orientation>
+    </diylc.misc.Label>
+    <diylc.misc.Label>
+      <name>LAB26</name>
+      <point x="4.795" y="2.3"/>
+      <text>D8</text>
+      <font name="Dialog" size="14" style="0"/>
+      <color hex="000000"/>
+      <horizontalAlignment>CENTER</horizontalAlignment>
+      <verticalAlignment>CENTER</verticalAlignment>
+      <orientation>DEFAULT</orientation>
+    </diylc.misc.Label>
+    <diylc.misc.Label>
+      <name>LAB11</name>
+      <point x="4.794999999999999" y="3.0"/>
+      <text>D3</text>
+      <font name="Dialog" size="14" style="0"/>
+      <color hex="666666"/>
+      <horizontalAlignment>CENTER</horizontalAlignment>
+      <verticalAlignment>CENTER</verticalAlignment>
+      <orientation>DEFAULT</orientation>
+    </diylc.misc.Label>
+    <diylc.misc.Label>
+      <name>LAB27</name>
+      <point x="4.794999999999999" y="3.3"/>
+      <text>D0</text>
+      <font name="Dialog" size="14" style="0"/>
+      <color hex="666666"/>
       <horizontalAlignment>CENTER</horizontalAlignment>
       <verticalAlignment>CENTER</verticalAlignment>
       <orientation>DEFAULT</orientation>
