@@ -28,11 +28,11 @@ Here is a [video of the prototype in action](https://github.com/kvalle/tinker-co
 
 To prepare for soldering I made a simple scematic diagram by hand, to make an overview of all the connections. It's not pretty, but helpful for the next step.
 
-![Scematic diagram drawn by hand](/docs/diagrams/scematic.png)
+![Scematic diagram drawn by hand](/docs/diagrams/scematic-v1.png)
 
 Based on this, I prepared the layout for the veroboard/stripboard. I used [DIY Layout Creator](https://github.com/bancika/diy-layout-creator) to draw this.
 
-![Diagram of veroboard layout for soldering](/docs/diagrams/vero.png)
+![Diagram of veroboard layout for soldering](/docs/diagrams/vero-v1.png)
 
 ## Thinking about the enclosure
 
@@ -56,5 +56,10 @@ The biggest problem encountered was that the D7 pin seems to have been fried on 
 I also found out that D8, which now powers one of the buzzers, is used while uploading new code to the ESP. This makes _a lot_ of noise, which is very annoying. I might have to disconnect the buzzers when working on the code in the future, or just use some ear plugs 🙉
 
 D8 is also high for a brief moment _before_ the `setup` function is called, making a short _beep_. Guess we'll just have to call that an accidental feature 🤷
+
+The wiring diagram and vero layout diagrams also look a bit different now, after all the changes (and some previous thinking about batteries and power).
+
+![Updated scematic](/docs/diagrams/scematic-v2.png)
+![Updated vero diagram](/docs/diagrams/vero-v2.png)
 
 Next steps should probably be to make a better enclosure and screw the PCBs in place.
