@@ -23,16 +23,16 @@ This section is mostly for Copilot :)
 
 ## 🔌 Input/output pins
 
-| Component              | Label | GPIO   | Comment                                                                         |
-| ---------------------- | ----- | ------ | ------------------------------------------------------------------------------- |
-| Button 1               | D1    | GPIO5  |                                                                                 |
-| Button 2               | D5    | GPIO14 |                                                                                 |
-| Button 3               | D6    | GPIO12 |                                                                                 |
-| Button 4               | D7    | GPIO13 |                                                                                 |
-| Buzzer 1 (PWM)         | D2    | GPIO4  |                                                                                 |
-| Buzzer 2 (PWM)         | D8    | GPIO15 | **Required LOW at boot.** Internal input pulldown. Boot fails if pulled HIGH.   |
-| Neopixel (9 LEDs)      | D4    | GPIO2  | **Required HIGH at boot.** Connected to on-board LED, boot fails if pulled LOW. |
-| Potensiometer (analog) | A0    | ADC0   |                                                                                 |
+| Component              | Label | GPIO   | Comment                                               |
+| ---------------------- | ----- | ------ | ----------------------------------------------------- |
+| Button 1               | D2    | GPIO4  |                                                       |
+| Button 2               | D5    | GPIO14 |                                                       |
+| Button 3               | D6    | GPIO12 |                                                       |
+| Button 4               | D3    | GPIO0  | **Required HIGH at boot.**                            |
+| Buzzer 1 (PWM)         | D1    | GPIO5  |                                                       |
+| Buzzer 2 (PWM)         | D8    | GPIO15 | **Required LOW at boot.**                             |
+| Neopixel (9 LEDs)      | D4    | GPIO2  | **Required HIGH at boot.** Connected to on-board LED. |
+| Potensiometer (analog) | A0    | ADC0   |                                                       |
 
 See [the scematic](/docs/diagrams/scematic.png) for further details on wiring.
 
