@@ -65,4 +65,5 @@ void Buzzer::update()
 void Buzzer::setup()
 {
     pinMode(pin, OUTPUT);
+    digitalWrite(pin, LOW);
 }
