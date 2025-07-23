@@ -39,3 +39,22 @@ Based on this, I prepared the layout for the veroboard/stripboard. I used [DIY L
 I received the big arcade machien buttons I ordered, and wanted to see how they would look on the console. The plan is to build a simple wooden box as enclsure for the project. But to make it look better the front will be laser cut from acrylic. Here is the first test cut for the panel:
 
 ![First test cut for the console front panel with buttons inserted](/docs/pics/front-panel-prototype.jpg)
+
+## Soldreing
+
+Spent some time soldring everything up on veroboard, and have a working panel (without enclosure or battery power, for now).
+
+![The panel running with the veroboard soldered up](/docs/pics/first-hookup-with-veroboard.jpg)
+![Closeup of the assembled veroboard](/docs/pics/closeup-of-soldered-veroboard.jpg)
+
+As seen in the photos, the panel is still powered by USB. I'm still waiting to receive the battery, so the power wiring has to wait until later.
+
+The work did not go completely frictionless. First I found that there were differences between my diagram and the specs, making me have to double check everything before wiring. The diagram also had 3V3 and GND mixed up on the ESP, leading to some late less-than-optimal changes to the wiring.
+
+The biggest problem encountered was that the D7 pin seems to have been fried on the ESP, working only sporadically. This took way too long to figure out, and made me change for D3 instead.
+
+I also found out that D8, which now powers one of the buzzers, is used while uploading new code to the ESP. This makes _a lot_ of noise, which is very annoying. I might have to disconnect the buzzers when working on the code in the future, or just use some ear plugs 🙉
+
+D8 is also high for a brief moment _before_ the `setup` function is called, making a short _beep_. Guess we'll just have to call that an accidental feature 🤷
+
+Next steps should probably be to make a better enclosure and screw the PCBs in place.
