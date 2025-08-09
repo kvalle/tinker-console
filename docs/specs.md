@@ -26,9 +26,9 @@ This section is mostly for Copilot :)
 | Component              | Label | GPIO   | Comment                                               |
 | ---------------------- | ----- | ------ | ----------------------------------------------------- |
 | Button 1               | D2    | GPIO4  |                                                       |
-| Button 2               | D5    | GPIO14 |                                                       |
-| Button 3               | D6    | GPIO12 |                                                       |
-| Button 4               | D3    | GPIO0  | **Required HIGH at boot.**                            |
+| Button 2               | D3    | GPIO0  | **Required HIGH at boot.**                            |
+| Button 3               | D5    | GPIO14 |                                                       |
+| Button 4               | D6    | GPIO12 |                                                       |
 | Buzzer 1 (PWM)         | D1    | GPIO5  |                                                       |
 | Buzzer 2 (PWM)         | D8    | GPIO15 | **Required LOW at boot.**                             |
 | Neopixel (9 LEDs)      | D4    | GPIO2  | **Required HIGH at boot.** Connected to on-board LED. |
