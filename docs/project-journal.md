@@ -63,3 +63,35 @@ The wiring diagram and vero layout diagrams also look a bit different now, after
 ![Updated vero diagram](/docs/diagrams/vero-v2.png)
 
 Next steps should probably be to make a better enclosure and screw the PCBs in place.
+
+## Building the wooden enclosure
+
+Woodworking isn't something I have much experience with outside of making wooden boxes and the like using the laser cutter. This time I wanted a more hands-on approach, with a simple wooden box enclosre to go with the front panel in acrylic that I had already prototyped.
+
+I experimented with different tilt angles to get the panel's incline right, and drew a simple sketch of what I thought I wanted it to look like with some measurements.
+
+![Initial sketch of the enclosure](/docs/pics/enclosure-sketch.png)
+
+After cutting and sanding some (somewhat) even and straight sides and a bottom piece, and gluing/screwing them together, I laser cut new panel pieces. The front panel itself is from two layers of MDF (for holding the LED strip in place) and a front layer from white acrylic. This layer has holes for the buttons, LEDs and the potentiometer.
+
+![Enclosure assembly, without panel](/docs/pics/enclosure-box-1.jpg)
+![Enclosure assembly, with panel](/docs/pics/enclosure-box-2.jpg)
+
+I also laser cut covers for the front and top from veneer. For the back I cut a piece of clear acrylic, to make it a display window for the electronics inside.
+
+Finally I laser cut a small veneer frame for the LED strip, and a speedometer dail for the potentiometer.
+
+The SVG file for all the laser cut parts is available [here](/docs/lasercutter/enclosure.svg). The parts were cut on a Epilog Zing-16 laser cutter, using these settings:
+
+| Material    | Power | Speed | Freq   | Used for                     |
+| ----------- | ----- | ----- | ------ | ---------------------------- |
+| 3mm veneer  | 50%   | 80%   | 500Hz  | Top and front covers         |
+| 3mm MDF     | 40%   | 60%   | 500Hz  | Panel (botton layers)        |
+| 3mm acrylic | 20%   | 100%  | 5000Hz | Panel (top layer)            |
+| 4mm acrylic | 25%   | 100%  | 5000Hz | Clear back cover             |
+| 1mm veneer  | 60%   | 100%  | 500Hz  | LED strip frame, speedometer |
+
+Here are some photos of the enclousre (almost) assembled. The front/top/back are not yet screwed in, as I need to finish the electronics, but otherwise done.
+
+![Photo of the console enclosure from the front.](/docs/pics/enclosure-assembled-front.jpg)
+![Photo of the console enclosure from the back.](/docs/pics/enclosure-assembled-back.jpg)
