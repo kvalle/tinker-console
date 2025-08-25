@@ -95,3 +95,27 @@ Here are some photos of the enclousre (almost) assembled. The front/top/back are
 
 ![Photo of the console enclosure from the front.](/docs/pics/enclosure-assembled-front.jpg)
 ![Photo of the console enclosure from the back.](/docs/pics/enclosure-assembled-back.jpg)
+
+## Battery power, part 1
+
+The package with the battery finally arrived, and I returned to the workshop to wire up the battery circuit.
+
+The plan for powering the console is:
+
+- Power from a 3.7V 2000mAh battery
+- Charging and battery protection circuit throught the TP4056 module
+- Power boost up to 5V from the MT3608 module
+- On/off power switch for the console
+- DC power in when charging through a standard “barrel jack”, from a 5V 1A power adapter
+
+After reading up on the MT3608 and TP4056 modules I realized I should move the power switch in the circuit, and updated the diagram accordingly. The new plan looks like this:
+
+![Updated diagram of veroboard layout, adjusting power circuit](/docs/diagrams/vero-v3.png)
+
+I also decided to place the power switch and the power socket in the back panel, instead of the wooden front or top as I had originally planned.
+
+After cutting a new acrylic plate on the laser cutter I soldered the power socket and battery up to the TP4056 module, and connected the (5V 1A) power adapter. The LED turned on, and battery is charging!
+
+![TP4056 module charging the battery](/docs/pics/tp4056-charging-battery.jpg)
+
+Next steps: Get the power onto the console and ESP through the MT3608 module, and mount everything in place in the enclosure.
