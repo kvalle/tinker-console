@@ -7,6 +7,11 @@
 - **1 potentiometer**: Used as analog input – can adjust volume, brightness, or tempo.
 - **1 Neopixel LED strip (w/ 9 LEDs)**: For visual effects and status indicators.
 - **ESP8266 NodeMCU**: The microcontroller that controls the entire setup.
+- **LiPo 103450 battery**: Rechargeable 2000mAh 3.7V battery
+- **TP4056**: Battery charger and protection circuit module.
+- **MT3608**: Boost converter to get the voltage up to 5V for the ESP.
+- **Power adapter**: 1A 5V power adapter for charging the battery.
+- **Assorted basic components**: Resistors, capasitors, JST-connectors, switches, DC power connector (see [diagram](/docs/diagrams/vero.png) for details).
 
 ## 💻 Development environment, limitations, and considerations
 
@@ -34,7 +39,7 @@ This section is mostly for Copilot :)
 | Neopixel (9 LEDs)      | D4    | GPIO2  | **Required HIGH at boot.** Connected to on-board LED. |
 | Potensiometer (analog) | A0    | ADC0   |                                                       |
 
-See [the scematic](/docs/diagrams/scematic.png) for further details on wiring.
+See [the scematic](/docs/diagrams/scematic.png) and the [veroboard layout](/docs/diagrams/vero.png) for further details on wiring.
 
 ## 🆓 Unused pins
 
