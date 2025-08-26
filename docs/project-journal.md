@@ -81,7 +81,7 @@ I also laser cut covers for the front and top from veneer. For the back I cut a 
 
 Finally I laser cut a small veneer frame for the LED strip, and a speedometer dail for the potentiometer.
 
-The SVG file for all the laser cut parts is available [here](/docs/lasercutter/enclosure.svg). The parts were cut on a Epilog Zing-16 laser cutter, using these settings:
+The SVG file for all the laser cut parts is available [here](/lasercutter/enclosure.svg). The parts were cut on a Epilog Zing-16 laser cutter, using these settings:
 
 | Material    | Power | Speed | Freq   | Used for                     |
 | ----------- | ----- | ----- | ------ | ---------------------------- |
