@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="400mm"
+   height="300mm"
+   viewBox="0 0 400 300"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+   sodipodi:docname="base-layout.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.2009579"
+     inkscape:cx="556.639"
+     inkscape:cy="539.98563"
+     inkscape:window-width="1512"
+     inkscape:window-height="916"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect1"
+       style="fill:none;stroke:#000000;stroke-width:0.0989556;stroke-linecap:round"
+       d="M 71.753761,58.8214 H 251.75376 v 150 H 71.753761 Z" />
+    <g
+       id="g7"
+       transform="translate(-1.3671897,-5.5321454)">
+      <rect
+         style="fill:#c7d0ff;fill-opacity:1;stroke:none;stroke-width:0.0470171;stroke-linecap:round;stroke-opacity:1"
+         id="rect3-4-1"
+         width="37"
+         height="16.952984"
+         x="115.24712"
+         y="183.85516" />
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-opacity:1"
+         x="127.86066"
+         y="193.48508"
+         id="text3-5-0"><tspan
+           sodipodi:role="line"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1"
+           x="127.86066"
+           y="193.48508"
+           id="tspan4-1">TP4056</tspan></text>
+    </g>
+    <g
+       id="g3"
+       transform="translate(-1.3349894,-5.8208336)">
+      <g
+         id="g4">
+        <rect
+           style="fill:#c7d0ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-opacity:1"
+           id="rect3"
+           width="39"
+           height="53"
+           x="79.364021"
+           y="126.26095" />
+        <text
+           xml:space="preserve"
+           style="font-size:3.175px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-opacity:1"
+           x="93.493034"
+           y="153.89886"
+           id="text3"><tspan
+             sodipodi:role="line"
+             id="tspan3"
+             style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1"
+             x="93.493034"
+             y="153.89886">Batteri</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g8">
+      <rect
+         style="fill:#c7d0ff;fill-opacity:1;stroke:none;stroke-width:0.0999997;stroke-linecap:round;stroke-opacity:1"
+         id="rect3-9"
+         width="30.285751"
+         height="53"
+         x="123.54039"
+         y="120.38416" />
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-opacity:1"
+         x="135.95242"
+         y="147.77094"
+         id="text3-1"><tspan
+           sodipodi:role="line"
+           id="tspan3-4"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1"
+           x="135.95242"
+           y="147.77094">Lyd</tspan></text>
+    </g>
+    <g
+       id="g6"
+       transform="translate(-1.8963565,-5.5725049)">
+      <rect
+         style="fill:#c7d0ff;fill-opacity:1;stroke:none;stroke-width:0.0470171;stroke-linecap:round;stroke-opacity:1"
+         id="rect3-4"
+         width="26.952982"
+         height="16.952984"
+         x="80.145699"
+         y="183.89552" />
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-opacity:1"
+         x="88.251198"
+         y="193.50993"
+         id="text3-5"><tspan
+           sodipodi:role="line"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1"
+           x="88.251198"
+           y="193.50993"
+           id="tspan4">MT3608</tspan></text>
+    </g>
+    <g
+       id="g5"
+       transform="translate(3.1750001,-7.4041127)">
+      <rect
+         style="fill:#c7d0ff;fill-opacity:1;stroke:none;stroke-width:0.173879;stroke-linecap:round;stroke-opacity:1"
+         id="rect2"
+         width="90"
+         height="70"
+         x="155.43483"
+         y="132.68011" />
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-opacity:1"
+         x="195.75139"
+         y="168.86221"
+         id="text3-5-5"><tspan
+           sodipodi:role="line"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1"
+           x="195.75139"
+           y="168.86221"
+           id="tspan4-8">Board</tspan></text>
+    </g>
+    <circle
+       style="fill:#c7d0ff;fill-opacity:1;stroke:none;stroke-width:0.0999997;stroke-linecap:round;stroke-opacity:1"
+       id="path8"
+       cx="75.996605"
+       cy="203.41147"
+       r="1.5" />
+    <circle
+       style="fill:#c7d0ff;fill-opacity:1;stroke:none;stroke-width:0.0999997;stroke-linecap:round;stroke-opacity:1"
+       id="path8-3"
+       cx="245.71042"
+       cy="203.41147"
+       r="1.5" />
+  </g>
+</svg>
