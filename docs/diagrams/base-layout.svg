@@ -23,15 +23,16 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.2009579"
-     inkscape:cx="556.639"
-     inkscape:cy="539.98563"
+     inkscape:zoom="1.00856"
+     inkscape:cx="600.85665"
+     inkscape:cy="502.20114"
      inkscape:window-width="1512"
      inkscape:window-height="916"
      inkscape:window-x="0"
      inkscape:window-y="38"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     showgrid="false" />
   <defs
      id="defs1" />
   <g
@@ -90,7 +91,8 @@
       </g>
     </g>
     <g
-       id="g8">
+       id="g8"
+       transform="translate(1.5875)">
       <rect
          style="fill:#c7d0ff;fill-opacity:1;stroke:none;stroke-width:0.0999997;stroke-linecap:round;stroke-opacity:1"
          id="rect3-9"
