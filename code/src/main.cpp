@@ -55,18 +55,30 @@ void handleLongButtonPress(int idx, int v, int up)
     if (idx == 1)
     {
       Serial.println("Red button longpressed");
+      neo.setAnimationMode(LedStrip::AnimationMode::CenterOut);
+      neo.red();
+      buzzer1.play(buttonPress);
     }
     else if (idx == 2)
     {
       Serial.println("Blue button longpressed");
+      neo.setAnimationMode(LedStrip::AnimationMode::ShiftLeft);
+      neo.blue();
+      buzzer1.play(buttonPress);
     }
     else if (idx == 3)
     {
       Serial.println("Yellow button longpressed");
+      neo.setAnimationMode(LedStrip::AnimationMode::EdgeIn);
+      neo.yellow();
+      buzzer1.play(buttonPress);
     }
     else if (idx == 4)
     {
       Serial.println("Green button longpressed");
+      neo.setAnimationMode(LedStrip::AnimationMode::ShiftRight);
+      neo.green();
+      buzzer1.play(buttonPress);
     }
   }
 }
