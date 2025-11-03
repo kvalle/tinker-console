@@ -83,12 +83,10 @@ void setup()
   neo.setup();
 
   pot.begin(A0)
-      .range(20, 500)
+      .range(50, 600)
       .average(potAvgBuffer, sizeof(potAvgBuffer))
       .onChange([](int idx, int v, int up)
-                { 
-                  neo.setSpeed(v);
-                  Serial.println("Potentiometer value: " + String(v)); });
+                { neo.setSpeed(v); });
 
   button1.begin(D2)
       .longPress(2, 1000)

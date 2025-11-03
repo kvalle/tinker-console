@@ -18,9 +18,11 @@ public:
     void setSpeed(uint16_t ms);
 
 private:
+    void shiftRight();
     Adafruit_NeoPixel strip;
     unsigned long lastUpdate = 0;
-    uint16_t speed = 100;
-    uint16_t pos = 0;
-    uint32_t currentColor;
+    unsigned long lastShift = 0;
+    uint16_t speed = 400;
+    uint16_t frequency_ms = 20;
+    uint32_t colors[LEDSTRIP_LED_COUNT];
 };
