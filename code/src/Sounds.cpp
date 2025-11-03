@@ -156,6 +156,31 @@ const int buttonPress4[][2] = {
     {NOTE_D5, SIXTEENTH_NOTE},
     {0, 0}};
 
+// Long press variants (one octave lower)
+const int buttonLongPress1[][2] = {
+    {NOTE_A3, SIXTEENTH_NOTE},
+    {NOTE_CS4, SIXTEENTH_NOTE},
+    {NOTE_E4, SIXTEENTH_NOTE},
+    {0, 0}};
+
+const int buttonLongPress2[][2] = {
+    {NOTE_E4, SIXTEENTH_NOTE},
+    {NOTE_C4, SIXTEENTH_NOTE},
+    {NOTE_A3, SIXTEENTH_NOTE},
+    {0, 0}};
+
+const int buttonLongPress3[][2] = {
+    {NOTE_G3, SIXTEENTH_NOTE},
+    {NOTE_B3, SIXTEENTH_NOTE},
+    {NOTE_G3, SIXTEENTH_NOTE},
+    {0, 0}};
+
+const int buttonLongPress4[][2] = {
+    {NOTE_D4, SIXTEENTH_NOTE},
+    {NOTE_FS4, SIXTEENTH_NOTE},
+    {NOTE_D4, SIXTEENTH_NOTE},
+    {0, 0}};
+
 const int popcornMelody[][2] = {
     {NOTE_B4, EIGHTH_NOTE},
     {NOTE_A4, EIGHTH_NOTE},

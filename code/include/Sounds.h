@@ -19,6 +19,10 @@ extern const int buttonPress1[][2];
 extern const int buttonPress2[][2];
 extern const int buttonPress3[][2];
 extern const int buttonPress4[][2];
+extern const int buttonLongPress1[][2];
+extern const int buttonLongPress2[][2];
+extern const int buttonLongPress3[][2];
+extern const int buttonLongPress4[][2];
 
 extern const int popcornMelody[][2];
 
