@@ -14,7 +14,7 @@ LedStrip::LedStrip(uint8_t pin)
 void LedStrip::setup()
 {
     strip.begin();
-    strip.setBrightness(179); // ~70% of max brightness
+    strip.setBrightness(120);
     strip.clear();
     strip.show();
 
