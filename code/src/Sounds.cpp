@@ -132,6 +132,30 @@ const int buttonPressDouble[][2] = {
     {0, 0} // Fine
 };
 
+const int buttonPress1[][2] = {
+    {NOTE_A4, SIXTEENTH_NOTE},
+    {NOTE_CS5, SIXTEENTH_NOTE},
+    {NOTE_E5, SIXTEENTH_NOTE},
+    {0, 0}};
+
+const int buttonPress2[][2] = {
+    {NOTE_E5, SIXTEENTH_NOTE},
+    {NOTE_C5, SIXTEENTH_NOTE},
+    {NOTE_A4, SIXTEENTH_NOTE},
+    {0, 0}};
+
+const int buttonPress3[][2] = {
+    {NOTE_G4, SIXTEENTH_NOTE},
+    {NOTE_B4, SIXTEENTH_NOTE},
+    {NOTE_G4, SIXTEENTH_NOTE},
+    {0, 0}};
+
+const int buttonPress4[][2] = {
+    {NOTE_D5, SIXTEENTH_NOTE},
+    {NOTE_FS5, SIXTEENTH_NOTE},
+    {NOTE_D5, SIXTEENTH_NOTE},
+    {0, 0}};
+
 const int popcornMelody[][2] = {
     {NOTE_B4, EIGHTH_NOTE},
     {NOTE_A4, EIGHTH_NOTE},
@@ -148,5 +172,32 @@ const int popcornMelody[][2] = {
     {NOTE_E4, SIXTEENTH_NOTE},
     {NOTE_FS4, EIGHTH_NOTE},
     {NOTE_B3, SIXTEENTH_NOTE},
+    {0, QUARTER_NOTE}, // Rest
+    {NOTE_DS4, EIGHTH_NOTE},
+    {NOTE_CS5, EIGHTH_NOTE},
+    {NOTE_D5, EIGHTH_NOTE},
+    {NOTE_CS5, EIGHTH_NOTE},
+    {NOTE_D5, SIXTEENTH_NOTE},
+    {NOTE_B4, EIGHTH_NOTE},
+    {NOTE_CS5, SIXTEENTH_NOTE},
+    {0, QUARTER_NOTE},
+    {NOTE_CS5, EIGHTH_NOTE},
+    {NOTE_A4, EIGHTH_NOTE},
+    {NOTE_B4, EIGHTH_NOTE},
+    {NOTE_A4, EIGHTH_NOTE},
+    {NOTE_B4, SIXTEENTH_NOTE},
+    {NOTE_FS4, EIGHTH_NOTE},
+    {NOTE_B4, SIXTEENTH_NOTE},
+    {0, 0} // Fine
+};
+
+const int panelStartup[][2] = {
+    {NOTE_G4, EIGHTH_NOTE},
+    {NOTE_B4, EIGHTH_NOTE},
+    {NOTE_D5, EIGHTH_NOTE},
+    {NOTE_G5, QUARTER_NOTE},
+    {NOTE_B5, SIXTEENTH_NOTE},
+    {NOTE_G5, EIGHTH_NOTE},
+    {NOTE_D5, QUARTER_NOTE},
     {0, 0} // Fine
 };

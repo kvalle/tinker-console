@@ -1,11 +1,11 @@
 #include <Arduino.h>
 #include <Automaton.h>
 #include "Buzzer.h"
-#include "NeoPixel.h"
+#include "LedStrip.h"
 #include "Sounds.h"
 
 Buzzer buzzer1(D1, 120);
-Buzzer buzzer2(D8, 150);
+Buzzer buzzer2(D8, 120);
 
 Atm_button button1;
 Atm_button button2;
@@ -15,36 +15,7 @@ Atm_button button4;
 uint16_t potAvgBuffer[16];
 Atm_analog pot;
 
-NeoPixel neo(D4, 9);
-
-enum ConsoleMode
-{
-  CONSOLE_MODE_1,
-  CONSOLE_MODE_2,
-  CONSOLE_MODE_3,
-  CONSOLE_MODE_4
-};
-
-ConsoleMode currentMode = CONSOLE_MODE_1;
-
-void playSoundForCurrentMode()
-{
-  switch (currentMode)
-  {
-  case CONSOLE_MODE_1:
-    buzzer1.play(marioCoin);
-    break;
-  case CONSOLE_MODE_2:
-    buzzer1.play(marioPowerUp);
-    break;
-  case CONSOLE_MODE_3:
-    buzzer1.play(marioOneUp);
-    break;
-  case CONSOLE_MODE_4:
-    buzzer1.play(marioGameOver);
-    break;
-  }
-}
+LedStrip neo(D4);
 
 void handleShortButtonPress(int idx, int v, int up)
 {
@@ -52,26 +23,27 @@ void handleShortButtonPress(int idx, int v, int up)
   {
     if (idx == 1)
     {
-      Serial.println("Button 1");
-      // buzzer1.play(popcornMelody);
-      playSoundForCurrentMode();
+      Serial.println("Red button pressed");
+      buzzer1.play(buttonPress1);
+      neo.red();
     }
     else if (idx == 2)
     {
-      Serial.println("Button 2");
-      // Serial.println("Playing sound 2");
-      // buzzer2.play(popcornMelody);
-      playSoundForCurrentMode();
+      Serial.println("Blue button pressed");
+      buzzer1.play(buttonPress2);
+      neo.blue();
     }
     else if (idx == 3)
     {
-      Serial.println("Button 3");
-      playSoundForCurrentMode();
+      Serial.println("Yellow button pressed");
+      buzzer1.play(buttonPress3);
+      neo.yellow();
     }
     else if (idx == 4)
     {
-      Serial.println("Button 4");
-      playSoundForCurrentMode();
+      Serial.println("Green button pressed");
+      buzzer1.play(buttonPress4);
+      neo.green();
     }
   }
 }
@@ -82,23 +54,19 @@ void handleLongButtonPress(int idx, int v, int up)
   {
     if (idx == 1)
     {
-      neo.setEffect(EffectType::Chase);
-      currentMode = CONSOLE_MODE_1;
+      Serial.println("Red button longpressed");
     }
     else if (idx == 2)
     {
-      neo.setEffect(EffectType::Rainbow);
-      currentMode = CONSOLE_MODE_2;
+      Serial.println("Blue button longpressed");
     }
     else if (idx == 3)
     {
-      neo.setEffect(EffectType::ColorWave);
-      currentMode = CONSOLE_MODE_3;
+      Serial.println("Yellow button longpressed");
     }
     else if (idx == 4)
     {
-      neo.setEffect(EffectType::TheaterChase);
-      currentMode = CONSOLE_MODE_4;
+      Serial.println("Green button longpressed");
     }
   }
 }
@@ -139,7 +107,7 @@ void setup()
       .onPress(1, handleShortButtonPress, 4)
       .onPress(2, handleLongButtonPress, 4);
 
-  buzzer2.play(fanfare);
+  buzzer2.play(panelStartup);
 }
 
 void loop()

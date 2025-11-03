@@ -15,7 +15,13 @@ extern const int fanfare[][2];
 
 extern const int buttonPress[][2];
 extern const int buttonPressDouble[][2];
+extern const int buttonPress1[][2];
+extern const int buttonPress2[][2];
+extern const int buttonPress3[][2];
+extern const int buttonPress4[][2];
 
 extern const int popcornMelody[][2];
+
+extern const int panelStartup[][2];
 
 #endif // SOUNDS_H
