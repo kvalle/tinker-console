@@ -40,7 +40,7 @@ I received the big arcade machien buttons I ordered, and wanted to see how they 
 
 ![First test cut for the console front panel with buttons inserted](/docs/pics/front-panel-prototype.jpg)
 
-## Soldreing
+## Soldering
 
 Spent some time soldring everything up on veroboard, and have a working panel (without enclosure or battery power, for now).
 
@@ -119,3 +119,70 @@ After cutting a new acrylic plate on the laser cutter I soldered the power socke
 ![TP4056 module charging the battery](/docs/pics/tp4056-charging-battery.jpg)
 
 Next steps: Get the power onto the console and ESP through the MT3608 module, and mount everything in place in the enclosure.
+
+## Battery power, part 2
+
+After hooking up the MT3608 module to the power circuit, the console is finally powered by the battery. (Ignore the stray USB cable connected to the ESP in the photo.)
+
+![Full charging module finished](/docs/pics/full-power-circuit-finished.jpg)
+
+Here is a short video of the first test of the console using battery power:
+
+![First test of console powered by the new battery circuit](/docs/pics/first-test-with-battery-power.mp4)
+
+The parts are still hanging loose, as I don't want to commit to positioning them inside until everything is finished.
+
+## New audio module
+
+Even though I now had everything I needed to assemble the console, I wanted to make a new version of the audio module. The reason being that I wanted to be able to be able to mute the sound with a physical switch, something the previous module lacked.
+
+I _could_ have added a switch directly to the cables of the old one, but I also wanted a narrower form factor so figured I might as well make a new one.
+
+This is the updated layout diagram:
+
+![Updated diagram of veroboard layout, adjusting audio module](/docs/diagrams/vero-v4.png)
+
+And here is a photo of the new audio module, now with power/mute switch.
+
+![New audio module](/docs/pics/new-audio-module.jpg)
+
+## Assembly
+
+With all the parts done it was finally time to connect, screw and glue everything together.
+
+I glued the differnet modules (main board, TP4056, MT3608, and audio module) to thin strips of MDF, and then glued these to the base board of the console.
+
+The base board is screwed in place using two screws in the back, and easy to remove should I need to adjust anything later. The battery is fastened inside a frame cut into the base board, and with a strip of MDF glued on top keeping it in place as long as the base board is screwed down.
+
+![Gluing all the electronics in place inside the console](/docs/pics/gluing-everything-in-place.jpg)
+
+And a few photos of the finished console:
+
+![Front view of the finished console](/docs/pics/finished-console-front.jpg)
+
+![Back view of the finished console](/docs/pics/finished-console-back.jpg)
+
+![View of the insides of the finished console](/docs/pics/finished-console-back-inside.jpg)
+
+## Final coding
+
+The console was now complete, yet still not quite functional. I had left off the coding at the point where I had enought to test that the components worked together, but not with any form of coherent functionality suitable for a toy for a 2-year-old.
+
+After trying a few different ideas I landed on the following behavior:
+
+- When pressing a button, the leftmost LED is set to the corresponding color.
+- The color spreads to the right on the LED strip, with a speed determined by the value of the potentiometer.
+- Each button has a different short sound sequence.
+- When long-pressed, the buttons change the console to different "modes" for spreading the colors: From the right, from the center out, from the edges and in (and the default left to right).
+
+[🎬 See a video of the console in action here](https://raw.githubusercontent.com/kvalle/tinker-console/main/docs/pics/finished-console-being-used.mp4)
+
+## Delivery
+
+The deadline (i.e. the two year birthday of my daughter) arrived, and it was time to see how well the console was received.
+
+![Delivering the console to it's intended user](/docs/pics/delivering-to-the-end-user.jpg)
+
+She seems to enjoy hammering on the buttons. But, at least for now, it seems the on/off power switch on the back is more interesting than what's on the the front panel…
+
+Hopefully she'll enjoy playing with the console. But if not, at least it's been fun (and educational) to make.
